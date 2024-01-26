@@ -17,7 +17,9 @@ def index():
 def ytrt():
     print("YTRT called")
     stream_url = request.args.get('Stream-url')
-    output = ""
+    if not stream_url:
+        return render_template('index.html', output=[], is_output_link=False)
+    output = []
     for stream in stream_url.split("\n"):
         x = parse.urlparse(stream)
         video_id = ""
@@ -36,14 +38,18 @@ def ytrt():
         vid = YouTubeChatDownloader().get_video_data(video_id=video_id)
         start_time = vid["start_time"] / 1000000 
         actual_time = start_time + int(t)
-        actual_time = datetime.utcfromtimestamp(actual_time).strftime('%Y-%m-%d %H:%M:%S')
-        output.append(output + f"https://youtu.be/{video_id}?t={t}s\n")
+        actual_time = datetime.fromtimestamp(actual_time).strftime('%Y-%m-%d %H:%M:%S')
+        output.append(f"{actual_time} https://youtu.be/{video_id}?t={t}s")
     return render_template('index.html', output=output, is_output_link=False)
 
 @app.route("/rtyt")
 def rtyt():
     print("rtyt called")
     stream_url = request.args.get('Stream-url')
+    if not stream_url:
+        return render_template('index.html', output=[], is_output_link=False)
+    if not request.args.get('appt'):
+        return render_template('index.html', output=["Enter Time"], is_output_link=False)
     output = []
     _time = request.args.get('appt')
     for stream in stream_url.split("\n"):
