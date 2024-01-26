@@ -87,4 +87,4 @@ def rtyt():
         output.append(link)
     return render_template('index.html', output=output, is_output_link=True)
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(port=5003, debug=False, host="0.0.0.0")
