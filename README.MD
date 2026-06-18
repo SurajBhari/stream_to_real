@@ -1,5 +1,9 @@
 # Stream To Real
 
+![Python](https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=ffdd54)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)
+![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white)
+
 A small Flask web tool that converts between **stream time** and **real (wall-clock) time** for YouTube livestreams — in both directions.
 
 - **Stream → Real:** given a stream URL with a timestamp (e.g. `?t=1280s`), find the actual date/time that moment happened.
