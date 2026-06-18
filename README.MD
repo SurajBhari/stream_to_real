@@ -1,22 +1,29 @@
 # Stream To Real
 
-I really cna't find a proper name for it.
-but its a small convertor to convertor stream time to real time. 
-and convert real time to stream time.
+A small Flask web tool that converts between **stream time** and **real (wall-clock) time** for YouTube livestreams — in both directions.
 
-## How to use
-just use the site mentioned on the right side of the page.
+- **Stream → Real:** given a stream URL with a timestamp (e.g. `?t=1280s`), find the actual date/time that moment happened.
+- **Real → Stream:** given a wall-clock time, find the offset into the stream where it occurred.
 
-you can input more than once link at once. 
+You can paste **multiple links at once** (one per line) and convert them in a single batch. It works out the stream's start time using [`chat_downloader`](https://github.com/xenova/chat-downloader), then offsets from there.
 
+## Run locally
 
-# Test Case
-You can use the following test case to test the program (right side).
+```bash
+pip install -r requirements.txt
+python main.py
 ```
+
+Then open the local site. Use the **right** panel for Stream → Real and the **left** panel for Real → Stream.
+
+## Test case
+
+Paste these into the right-side (Stream → Real) box:
+
+```text
 https://youtu.be/live/aRHcStRteQE
 https://youtu.be/live/T7zPNkKL0pQ
 https://youtu.be/live/s46VJxqiHCk
 ```
-Time for this test case is above 21:20 
 
-You can reverse this and test (for left side) and will get 2024-01-26 21:20:00 for all of them.
+All three resolve to just after **21:20**. Reversing the operation (left side) with `2024-01-26 21:20:00` returns the corresponding stream offsets.
