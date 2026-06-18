@@ -1,238 +1,101 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-          rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-          crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Adjust the width of the left and right sides */
-        .left-side, .right-side {
-            width: 50%;
-            padding: 20px;
-            text-align: center;
-            margin-top: 175px;
-        }
-
-        /* Style the glowing name */
-        .glowing-name {
-            margin-top: 55px;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 36px;
-            color: gold;
-            text-transform: uppercase;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5);
-            animation: glowing-animation 2s infinite;
-        }
-
-        @keyframes glowing-animation {
-            10% {
-                text-shadow: 0 0 10px red, 0 0 20px green, 0 0 30px blue;
-            }
-            40% {
-                text-shadow: 0 0 20px chocolate, 0 0 40px rebeccapurple, 0 0 60px rgba(255, 255, 255, 0.8);
-            }
-            80% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5);
-            }
-        }
-
-
-        /* Your existing CSS styles ... */
-
-        /* Style the form boxes */
-        .form-box {
-            background-color: #fff;
-            padding: 20px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            animation: form-box-animation 1s ease-in-out;
-        }
-
-        @keyframes form-box-animation {
-            0% {
-                transform: scale(0.9);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Additional styles for the form inside the boxes */
-        .form-box form {
-            text-align: center;
-        }
-
-        /* Additional styles for form elements inside the boxes */
-        .form-box .form-group {
-            margin-bottom: 10px;
-        }
-
-
-        /* Your existing CSS rules ... */
-
-        /* Style the form boxes */
-        .form-box {
-            background-color: #fff;
-            padding: 20px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            animation: form-box-animation 1s ease-in-out;
-        }
-
-        @keyframes form-box-animation {
-            0% {
-                transform: scale(0.9);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Additional styles for the form inside the boxes */
-        .form-box form {
-            text-align: center;
-        }
-
-        /* Additional styles for form elements inside the boxes */
-        .form-box .form-group {
-            margin-bottom: 10px;
-        }
-
-        /* Media query for responsiveness */
-        @media (max-width: 768px) {
-            .container-fluid {
-                flex-direction: column;
-                text-align: center;
-            }
-            .left-side, .right-side {
-                width: 100%;
-            }
-        }
-
-
-        /* Your existing CSS rules ... */
-
-        /* Style the footer */
-        .footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* Media query for responsiveness */
-        @media (max-width: 768px) {
-            .container-fluid {
-                flex-direction: column;
-                text-align: center;
-            }
-            .left-side, .right-side {
-                width: 100%;
-            }
-        }
-        q
-
-        /* Glowing border animation for input fields */
-        input[type="text"] {
-            border: 2px solid transparent;
-            border-radius: 5px;
-            transition: border 0.3s;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        input[type="text"]:focus {
-            border: 2px solid #00ccff; /* Change the color to the desired glowing color */
-        }
-
-        /* Glowing running animation for form boxes */
-        .form-box {
-            animation: glow 2s alternate infinite;
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-            100% {
-                box-shadow: 0 0 20px #00ccff;
-            }
-        }
-    </style>
-
-    <title>Real Time to Youtube Time</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+<title>Stream ⇄ Real Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7FBF0; --ink:#0B2018; --accent:#00B894; --orange:#FF7A3D; --yellow:#FFD23F;
+    --border:3px solid var(--ink); --shadow:6px 6px 0 var(--ink);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;padding:32px 24px 80px;
+    background-image:radial-gradient(var(--ink) 1.2px,transparent 1.2px);background-size:26px 26px;background-position:-13px -13px;
+  }
+  header{max-width:1000px;margin:0 auto 32px;text-align:center}
+  .kicker{display:inline-block;background:var(--accent);color:#fff;border:var(--border);box-shadow:var(--shadow);
+    padding:6px 16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:13px;transform:rotate(-2deg);margin-bottom:18px}
+  h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(40px,8vw,84px);line-height:.9;letter-spacing:-2px}
+  h1 .pop{color:var(--accent)}
+  .lead{font-size:17px;font-weight:500;opacity:.8;margin-top:14px}
+  .grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+  .card{background:#fff;border:var(--border);box-shadow:var(--shadow);padding:24px}
+  .card h2{font-family:'Syne';font-weight:800;font-size:24px;margin-bottom:6px}
+  .card.one h2{color:var(--accent)} .card.two h2{color:var(--orange)}
+  .card p.t{font-size:14px;font-weight:500;opacity:.75;margin-bottom:16px}
+  label{display:block;text-align:left;font-weight:700;font-size:14px;margin:12px 0 6px}
+  textarea,input[type=time]{width:100%;font-family:'DM Sans';font-size:15px;font-weight:500;padding:12px 14px;border:var(--border);background:#FFFDF7;outline:none}
+  textarea:focus,input[type=time]:focus{box-shadow:4px 4px 0 var(--ink)}
+  textarea{resize:vertical;min-height:120px}
+  .btn{margin-top:16px;width:100%;font-family:'Syne';font-weight:800;font-size:17px;cursor:pointer;padding:15px;border:var(--border);box-shadow:var(--shadow);transition:.08s}
+  .card.one .btn{background:var(--accent);color:#fff} .card.two .btn{background:var(--orange);color:#fff}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+  .btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+  .output{max-width:1000px;margin:28px auto 0}
+  .output h2{font-family:'Syne';font-weight:800;font-size:22px;margin-bottom:12px;text-align:center}
+  .out-card{background:var(--yellow);border:var(--border);box-shadow:var(--shadow);padding:18px 22px}
+  .out-card ol{margin:0;padding-left:22px}
+  .out-card li{font-weight:600;margin:6px 0;word-break:break-all}
+  .out-card a{color:var(--ink);font-weight:700}
+  .out-empty{text-align:center;font-weight:600;opacity:.7;padding:6px}
+  footer{position:fixed;bottom:16px;left:0;right:0;text-align:center;font-size:13px;font-weight:500;opacity:.6}
+</style>
 </head>
+<body>
+  <header>
+    <span class="kicker">Stream ⇄ Real</span>
+    <h1>STREAM TIME,<br><span class="pop">REAL TIME.</span></h1>
+    <p class="lead">Convert a YouTube stream timestamp to the actual clock time &mdash; and back. Paste multiple links at once.</p>
+  </header>
 
-<body style="background-color:whitesmoke;"> <!-- Set the background color to dark blue (#00008B) -->
-    <div class="glowing-name">
-        Real Time to Youtube Time
+  <div class="grid">
+    <div class="card one">
+      <h2>▶ Stream → Real</h2>
+      <p class="t">Stream URL(s) with a <code>?t=</code> timestamp → the real date &amp; time it happened.</p>
+      <form action="ytrt" method="get">
+        <label for="Stream-url">Stream URL(s) with timestamp</label>
+        <textarea id="Stream-url" name="Stream-url" placeholder="https://youtu.be/live/xxxx?t=1280s" rows="8"></textarea>
+        <button type="submit" class="btn">CONVERT →</button>
+      </form>
     </div>
-    <!-- align vertically and horizontally -->
-    <div class="container-fluid d-flex flex-row justify-content-center align-items-center">
-        <div class="left-side">
-            <h1>Youtube To Real Time</h1>
-            <div class="form-box">
-                <form action="ytrt" class="form-inline">
-                    <center>
-                        <div class="form-group">
-                            <label for "Stream-url"> Stream URL with timestamp </label>
-                            <textarea class="form-control" id="Stream-url" name="Stream-url" placeholder="Enter Stream URL(s) with timestamp" rows="10"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </center>
-                </form>
-            </div>
-        </div>
-        <div class="right-side">
-            <h1>Real Time to Youtube timing</h1>
-            <div class="form-box">
-                <form action="rtyt" class="form-inline">
-                    <center>
-                        <div class="form-group">
-                            <label for "yt-url">URL</label>
-                            <textarea class="form-control" id="Stream-url" name="Stream-url" placeholder="Enter Stream URL(s)" rows="10"></textarea>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for "yt-time">Time (IN IST)</label>
-                            <input type="time" id="appt" name="appt">
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </center>
-                </form>
-            </div>
-        </div>
+
+    <div class="card two">
+      <h2>🕑 Real → Stream</h2>
+      <p class="t">A wall-clock time (IST) → where it lands inside the stream.</p>
+      <form action="rtyt" method="get">
+        <label for="rt-url">Stream URL(s)</label>
+        <textarea id="rt-url" name="Stream-url" placeholder="https://youtu.be/live/xxxx" rows="5"></textarea>
+        <label for="appt">Time (IST)</label>
+        <input type="time" id="appt" name="appt">
+        <button type="submit" class="btn">CONVERT →</button>
+      </form>
     </div>
-    <div class="botton-side">
-        <center>
-            <h1> Output </h1>
-            <div class="form-box">
-                <ol>
-                {% for out in output%}
-                    {% if is_output_link and 'Invalid' not in out %}
-                        <li><a href="{{out}}">{{out}}</a></li>
-                    {% else %}
-                        <li>{{out}}</li>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </center>
-    <div>
+  </div>
+
+  <div class="output">
+    <h2>Output</h2>
+    <div class="out-card">
+      {% if output %}
+      <ol>
+        {% for out in output %}
+          {% if is_output_link and 'Invalid' not in out %}
+            <li><a href="{{ out }}">{{ out }}</a></li>
+          {% else %}
+            <li>{{ out }}</li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+      {% else %}
+      <div class="out-empty">Results show up here once you convert. ↑</div>
+      {% endif %}
+    </div>
+  </div>
+  <footer>built by Suraj &middot; github.com/SurajBhari</footer>
 </body>
-
 </html>
