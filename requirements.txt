@@ -1,2 +1,2 @@
 chat-downloader
-flask
+flaskgunicorn
